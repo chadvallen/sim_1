@@ -7,3 +7,9 @@ img {
 * {
   font-family: 'Open Sans', sans-serif;
 }
+
+.parent {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px;
+}

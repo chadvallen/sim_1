@@ -23,20 +23,16 @@ class App extends Component {
     })
   }
 
-  deleteProduct = (id) => {
-    axios.delete(`/api/product/${id}`).then( res => {
-      this.setState({list: res.data})
-    })
-    window.location.reload();
-  }
 
 
   render() {
     return (
       <div className="App">
           <Header />
-          <Dashboard list={this.state.list} deleteProduct={this.deleteProduct}/>
+          <div className="parent">
+          <Dashboard list={this.state.list} />
           <Form />
+          </div>
       </div>
     );
   }

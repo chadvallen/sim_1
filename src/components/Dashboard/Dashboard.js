@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import Product from '../Product/Product';
+import axios from 'axios';
+import './Dashboard.css';
 
 class Dashboard extends Component {
     constructor(props) {
         super(props);
     }
 
+    deleteProduct = (id) => {
+        axios.delete(`/api/product/${id}`)
+        window.location.reload();
+      }
+    
+
     render() {
         let newList = this.props.list.map(item => {
             return (
-                <div>
+                <div className="child">
                     <Product name={item.name} price={item.price} img={item.img} />
-                    <button onClick={() => this.props.deleteProduct(item.id)}>Delete</button>
+                    <button onClick={() => this.deleteProduct(item.id)}>Delete</button>
                 </div>
             )
         })

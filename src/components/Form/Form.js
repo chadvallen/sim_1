@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import './Form.css'
 
 class Form extends Component {
     constructor() {
         super();
 
         this.state = {
-            imageUrlInput: '',
+            imageUrlInput: 'http://www.independentmediators.co.uk/wp-content/uploads/2016/02/placeholder-image.jpg',
             nameInput: '',
             priceInput: 0
         }
@@ -44,8 +45,8 @@ class Form extends Component {
 
     render() {
         return (
-            <div>
-                
+            <div className="parentForm">
+                <img src={this.state.imageUrlInput}/><br></br>
                 Name: <input onChange={e => this.handleNameInput(e.target.value)}></input><br></br>
                 Price: <input onChange={e => this.handlePriceInput(e.target.value)}></input><br></br>
                 ImageURL: <input onChange={e => this.handleImageUrlInput(e.target.value)}></input>

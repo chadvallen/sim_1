@@ -27,12 +27,5 @@ module.exports = {
             console.error('Error on DELETE --> ', err)
         })
     } 
-
-
-
-
-
-
-
-
+    
 }
