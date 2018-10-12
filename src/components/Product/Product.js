@@ -1,7 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-export default function Product() {
+export default function Product(props) {
+
     return (
-        <div>Product</div>
+        <div>
+            <div>{props.name}</div>
+            <div>{props.price}</div>
+            <img src={props.img} />
+            
+        </div>
     )
 }

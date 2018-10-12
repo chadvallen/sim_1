@@ -7,11 +7,19 @@ class Dashboard extends Component {
     }
 
 
+
+
     render() {
+        let newList = this.props.list.map(item => {
+            return (
+                <div>
+                    <Product name={item.name} price={item.price} img={item.img}/>
+                </div>
+            )
+        })
         return (
             <div>
-                Dashboard
-                <Product />
+                {newList}
             </div>
             
         )

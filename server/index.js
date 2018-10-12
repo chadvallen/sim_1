@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const massive = require('massive');
+const controller = require('./controller');
 require('dotenv').config();
 
 const app = express();
@@ -12,10 +13,11 @@ massive(process.env.CONNECTION_STRING).then(db => {
     console.error('Error on MASSIVE -->', err)
 })
 
+app.get('/api/inventory', controller.getProducts);
+app.post('/api/product', controller.createProduct);
 
 
-
-SERVER_PORT = 4000;
+const SERVER_PORT = 4000;
 app.listen(SERVER_PORT, () => {
     console.log(`Server is listening on port ${SERVER_PORT} 🎃`)
 })
