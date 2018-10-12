@@ -19,10 +19,11 @@ class Form extends Component {
             img: this.state.imageUrlInput
         }
         axios.post('/api/product', newProduct).then(results => {
-            this.setState({createProduct: results})
+            this.setState({createProduct: results.data})
         }).catch(err=> {
             console.error('Error on createPRoduct -->', err)
         })
+        window.location.reload();
     }
 
     handleImageUrlInput(val) {

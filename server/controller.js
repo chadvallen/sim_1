@@ -17,7 +17,19 @@ module.exports = {
             res.sendStatus(200);
         })
         
-    }
+    },
+
+    deleteProduct: (req, res) => {
+        const db = req.app.get('db');
+        db.delete_product([req.params.id]).then(() => {
+            res.sendStatus(200);
+        }).catch(err => {
+            console.error('Error on DELETE --> ', err)
+        })
+    } 
+
+
+
 
 
 
